@@ -166,10 +166,10 @@
 
     function $(sel, root=document) { return root.querySelector(sel); }
 
-	function adImgHtml(id) {
-		const bust = Date.now();               // cache buster so the browser must fetch
-		return `<img id="${id}" src="/advert.png?v=${bust}" alt="Advertisement" width="150" height="500" />`;
-	}
+    function adImgHtml(id) {
+      const bust = Date.now(); // cache buster so the browser must fetch
+      return `<img id="${id}" src="advert.png?v=${bust}" alt="Advertisement" width="150" height="500" />`;
+    }
 
     function wireAdClicks(root) {
       const el = root.querySelector('.ad-rail .ad-box');
