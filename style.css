@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+:root {
+  --bg: #0b1021;
+  --panel: #161c30;
+  --accent: #6cf6ff;
+  --text: #e6ecff;
+  --muted: #9aa4bf;
+  --grid: #1e2842;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: radial-gradient(circle at 20% 20%, rgba(108, 246, 255, 0.08), transparent 30%),
+    radial-gradient(circle at 80% 40%, rgba(255, 107, 181, 0.08), transparent 35%),
+    var(--bg);
+  color: var(--text);
+}
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.9rem;
+}
+
+.tagline {
+  margin: 4px 0 0;
+  color: var(--muted);
+}
+
+.cta {
+  display: flex;
+  gap: 8px;
+}
+
+button {
+  background: linear-gradient(135deg, #6cf6ff, #7b7bff);
+  border: none;
+  color: #0c1130;
+  font-weight: 700;
+  padding: 10px 16px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(108, 246, 255, 0.35);
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(108, 246, 255, 0.45);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+}
+
+.board-card {
+  background: var(--panel);
+  border: 1px solid rgba(108, 246, 255, 0.12);
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+.canvas-wrap {
+  position: relative;
+  background: radial-gradient(circle at 50% 100%, rgba(108, 246, 255, 0.1), transparent 40%),
+    var(--grid);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  background: repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.04) 0,
+      rgba(255, 255, 255, 0.04) 1px,
+      transparent 1px,
+      transparent 30px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.04) 0,
+      rgba(255, 255, 255, 0.04) 1px,
+      transparent 1px,
+      transparent 30px
+    ),
+    #0f1627;
+}
+
+.status {
+  position: absolute;
+  inset: 12px;
+  border-radius: 12px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(12, 17, 48, 0.75);
+  color: #e6ecff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-align: center;
+  backdrop-filter: blur(5px);
+}
+
+.status.show {
+  display: flex;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.panel {
+  background: var(--panel);
+  border-radius: 18px;
+  padding: 16px 18px;
+  border: 1px solid rgba(108, 246, 255, 0.12);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.28);
+}
+
+.panel h2 {
+  margin: 0 0 10px;
+  font-size: 1.1rem;
+}
+
+dl {
+  margin: 0;
+  display: grid;
+  gap: 8px;
+}
+
+ dt {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+dd {
+  margin: 2px 0 0;
+  font-size: 1.4rem;
+}
+
+.controls {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+}
+
+kbd {
+  display: inline-block;
+  padding: 4px 7px;
+  background: #0b132a;
+  border-radius: 6px;
+  border: 1px solid rgba(230, 236, 255, 0.15);
+  margin-right: 6px;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 540px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  canvas {
+    height: 70vh;
+  }
+}

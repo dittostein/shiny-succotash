@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inverse Gravity Tetris</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div>
+        <h1>Inverse Gravity Tetris</h1>
+        <p class="tagline">Blocks float upward. Clear lines before the tower reaches space!</p>
+      </div>
+      <div class="cta">
+        <button id="restart">Restart</button>
+        <button id="pause">Pause</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="board-card">
+        <div class="canvas-wrap">
+          <canvas id="board" width="300" height="600" aria-label="Game board"></canvas>
+          <div class="status" id="status"></div>
+        </div>
+      </section>
+      <section class="sidebar">
+        <div class="panel">
+          <h2>Stats</h2>
+          <dl>
+            <div>
+              <dt>Lines</dt>
+              <dd id="lines">0</dd>
+            </div>
+            <div>
+              <dt>Level</dt>
+              <dd id="level">1</dd>
+            </div>
+            <div>
+              <dt>Pieces</dt>
+              <dd id="pieces">0</dd>
+            </div>
+          </dl>
+        </div>
+        <div class="panel">
+          <h2>Controls</h2>
+          <ul class="controls">
+            <li><kbd>←</kbd>/<kbd>→</kbd> move sideways</li>
+            <li><kbd>↓</kbd> ride the updraft (fast upward)</li>
+            <li><kbd>↑</kbd> rotate</li>
+            <li><kbd>Space</kbd> slam upward</li>
+            <li><kbd>P</kbd> pause or resume</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h2>How it works</h2>
+          <p>
+            New pieces spawn near the bottom and drift toward the sky. When a row is filled, it
+            disappears and fresh space opens beneath the tower. Keep the stack from breaching the
+            ceiling.
+          </p>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>

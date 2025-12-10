@@ -1,6 +1,5 @@
-build/
-*.o
-*.obj
-*.exe
-*.out
+node_modules
+npm-debug.log*
 .DS_Store
+__pycache__/
+*.pyc
